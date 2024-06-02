@@ -7,8 +7,8 @@ import "src/styles/index.css";
 import "src/styles/fonts.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  //<React.StrictMode>
     <App />
-  </React.StrictMode>
+  //</React.StrictMode>
 );
 
