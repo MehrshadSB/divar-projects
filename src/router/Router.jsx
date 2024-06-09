@@ -7,7 +7,7 @@ import AdminPage from "src/Pages/AdminPage";
 import AuthPage from "src/Pages/AuthPage";
 import DashboardPage from "src/Pages/DashboardPage";
 import HomePage from "src/Pages/HomePage";
-import getProfile from "src/Services/user";
+import {getProfile} from "src/Services/user";
 import Loader from "src/Components/modules/Loader";
 
 function Router() {
@@ -15,7 +15,7 @@ function Router() {
     ["profile"],
     getProfile
   );
-  console.log({ data, isLoading, error });
+  // console.log({ data, isLoading, error });
 
   if (isLoading) return <Loader />;
 
