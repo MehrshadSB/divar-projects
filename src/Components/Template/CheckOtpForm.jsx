@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 
 import { checkOtp } from "src/Services/Auth";
@@ -6,9 +5,11 @@ import { getProfile } from "src/Services/user";
 import { setCookies } from "src/utils/Cookies";
 
 import styles from "./checkOtpForm.module.css";
+import { useQuery } from "@tanstack/react-query";
 
 function CheckOtpForm({ code, setCode, setStep, mobile }) {
   const navigate = useNavigate();
+
   const { refetch } = useQuery(["profile"], getProfile);
 
   const submitHandler = async () => {

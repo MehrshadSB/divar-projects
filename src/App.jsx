@@ -8,6 +8,7 @@ import defaultOptions from "./constants/reactQuery";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Layout from "./Layouts/Layout";
 import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const queryClinet = new QueryClient({ defaultOptions });

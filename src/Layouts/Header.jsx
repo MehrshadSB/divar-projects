@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DropDownMenu from "src/Components/Template/DropDownMenu";
 import styles from "src/Layouts/Header.module.css";
 
 function Header() {
@@ -15,12 +16,8 @@ function Header() {
         </span>
       </div>
       <div>
-        <Link to="/auth">
-          <span>
-            <img src="profile.svg" alt="profile" />
-            <p>دیوار من</p>
-          </span>
-        </Link>
+        <DropDownMenu />
+
         <Link to="/dashboard" className={styles.button}>
           ثبت اگهی
         </Link>
