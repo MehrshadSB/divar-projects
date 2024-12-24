@@ -1,16 +1,28 @@
-import { useQuery } from "@tanstack/react-query";
+import {
+  QueryClient,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 
-import { getPosts } from "src/Services/user";
+import { deletePosts, getPosts } from "src/Services/user";
 import Loader from "../modules/Loader";
 import { sp } from "src/utils/numbers";
 
 import styles from "./postList.module.css";
 
 function PostList() {
+  const queryClient = useQueryClient();
+
   const { data, isLoading, error } = useQuery(
     ["my-post-list"],
     getPosts
   );
+
+  const { mutate } = useMutation(deletePosts, {
+    onSuccess: () => queryClient.invalidateQueries(),
+  });
+
   console.log({ data, isLoading, error });
 
   return (
@@ -39,6 +51,9 @@ function PostList() {
                   ).toLocaleDateString("fa-IR")}
                 </p>
                 <span>{sp(post.amount)} تومان</span>
+                <button onClick={() => mutate(post._id)}>
+                  حذف
+                </button>
               </div>
             </div>
           ))}

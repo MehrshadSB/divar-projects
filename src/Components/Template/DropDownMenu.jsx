@@ -5,12 +5,13 @@ import {
 
 import { useState } from "react";
 
-import styles from "./dropDownMenu.module.css";
 import { Link } from "react-router-dom";
 import { deleteAllCookies } from "src/utils/Cookies";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "src/Services/user";
 import toast from "react-hot-toast";
+
+import styles from "./dropDownMenu.module.css";
 
 function DropDownMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,8 @@ function DropDownMenu() {
     ["profile"],
     getProfile
   );
-  console.log({ data, error });
+  
+  // console.log({ data, error });
   const signoutHandler = () => {
     deleteAllCookies();
     refetch();
@@ -36,7 +38,7 @@ function DropDownMenu() {
     if (!data) {
       setIsOpen(false);
     } else {
-      setIsOpen(prev => !prev);
+      setIsOpen((prev) => !prev);
     }
   };
 
@@ -66,12 +68,22 @@ function DropDownMenu() {
         <div className={styles.menu}>
           <div className="shadow-md">
             <Link to="/dashboard">
-              <h3 className="block">آگهی های من</h3>
+              <h3
+                className="block"
+                onClick={() => setIsOpen((prev) => !prev)}
+              >
+                آگهی های من
+              </h3>
             </Link>
           </div>
           <div className="shadow-md">
             <Link to="/dashboard">
-              <h3 className="block">ثبت آگهی جدید</h3>
+              <h3
+                className="block"
+                onClick={() => setIsOpen((prev) => !prev)}
+              >
+                ثبت آگهی جدید
+              </h3>
             </Link>
           </div>
           {data ? (

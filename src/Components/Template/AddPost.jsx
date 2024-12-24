@@ -18,6 +18,7 @@ function AddPost() {
   });
 
   const { data } = useQuery(["category"], getCategory);
+  console.log(data);
 
   const changeHandler = (event) => {
     const name = event.target.name;
@@ -61,7 +62,7 @@ function AddPost() {
       <label htmlFor="title">عنوان :</label>
       <input type="text" name="title" id="title" />
       <label htmlFor="content">توضیحات :</label>
-      <textarea name="contetn" id="content" />
+      <textarea name="content" id="content" />
       <label htmlFor="amount">قیمت :</label>
       <input type="number" name="amount" id="amount" />
       <label htmlFor="city">شهر :</label>

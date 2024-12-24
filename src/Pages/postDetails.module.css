@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1000px;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.image {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.image img {
+  border-radius: 10px;
+}
+
+.text {
+  width: 50%;
+}
+
+.text div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0 20px 20px;
+}
+
+.text h1 {
+  font-size: 2rem;
+  padding-top: 10%;
+  padding-bottom: 50px;
+}
+
+.content {
+  height: 200px;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.content p {
+  padding: 0 10px 0 10px;
+}

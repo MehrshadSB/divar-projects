@@ -7,15 +7,17 @@ import AdminPage from "src/Pages/AdminPage";
 import AuthPage from "src/Pages/AuthPage";
 import DashboardPage from "src/Pages/DashboardPage";
 import HomePage from "src/Pages/HomePage";
-import {getProfile} from "src/Services/user";
+import { getProfile } from "src/Services/user";
 import Loader from "src/Components/modules/Loader";
+import PostDetails from "src/Pages/PostDetails";
 
 function Router() {
   const { data, isLoading, error } = useQuery(
     ["profile"],
     getProfile
   );
-  // console.log({ data, isLoading, error });
+  
+  console.log({ data, isLoading, error });
 
   if (isLoading) return <Loader />;
 
@@ -44,6 +46,7 @@ function Router() {
           )
         }
       />
+      <Route path="/post/:id" element={<PostDetails />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

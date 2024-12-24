@@ -1,0 +1,16 @@
+.sideBar {
+  margin-top: 30px;
+  width: 200px;
+}
+
+.sideBar li {
+  display: flex;
+  margin: 20px 0;
+  
+}
+
+.sideBar li p {
+  font-weight: 200;
+  padding-right: 20px;
+  color: grey;
+}
